@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Masjid Al Mukhlisin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #0d3b66;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        header {
+            margin-top: 60px;
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('masjid.jpg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 50px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .prayer-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 160px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #0d3b66;
+        }
+
+        .events {
+            background: #e9f1f7;
+        }
+
+        .event-box {
+            max-width: 700px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #0d3b66;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#prayer">Prayer Times</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header>
+    <h1>Masjid Al Mukhlisin</h1>
+    <p>Peace • Faith • Community</p>
+</header>
+
+<section id="about">
+    <div class="about">
+        <h2>About Our Mosque</h2>
+        <p>
+            Masjid Al Mukhlisin is a center for worship, education, and community development.
+            We provide daily congregational prayers, Friday sermons, Islamic classes,
+            youth programs, and community activities.
+        </p>
+    </div>
+</section>
+
+<section id="prayer">
+    <h2>Today's Prayer Times</h2>
+
+    <div class="prayer-container">
+        <div class="card">
+            <h3>Fajr</h3>
+            <p id="fajr"></p>
+        </div>
+
+        <div class="card">
+            <h3>Dhuhr</h3>
+            <p id="dhuhr"></p>
+        </div>
+
+        <div class="card">
+            <h3>Asr</h3>
+            <p id="asr"></p>
+        </div>
+
+        <div class="card">
+            <h3>Maghrib</h3>
+            <p id="maghrib"></p>
+        </div>
+
+        <div class="card">
+            <h3>Isha</h3>
+            <p id="isha"></p>
+        </div>
+    </div>
+</section>
+
+<section id="events" class="events">
+    <h2>Upcoming Events</h2>
+
+    <div class="event-box">
+        <h3>Friday Khutbah</h3>
+        <p>Every Friday at 1:00 PM</p>
+    </div>
+
+    <div class="event-box">
+        <h3>Quran Class</h3>
+        <p>Every Saturday at 10:00 AM</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@masjidal-mukhlisin.com</p>
+    <p>Phone: +60 12-345 6789</p>
+    <p>Kuala Lumpur, Malaysia</p>
+</section>
+
+<footer>
+    <p>© 2026 Masjid Al Mukhlisin | All Rights Reserved</p>
+</footer>
+
+<script>
+    // ===============================
+    // 🔹 EDIT PRAYER TIMES HERE ONLY
+    // ===============================
+
+    const prayerTimes = {
+        fajr: "5:50 AM",
+        dhuhr: "1:20 PM",
+        asr: "4:40 PM",
+        maghrib: "7:25 PM",
+        isha: "8:50 PM"
+    };
+
+    document.getElementById("fajr").textContent = prayerTimes.fajr;
+    document.getElementById("dhuhr").textContent = prayerTimes.dhuhr;
+    document.getElementById("asr").textContent = prayerTimes.asr;
+    document.getElementById("maghrib").textContent = prayerTimes.maghrib;
+    document.getElementById("isha").textContent = prayerTimes.isha;
+</script>
+
+</body>
+</html>
